@@ -1017,8 +1017,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
-	{ MODKEY,                       XK_Up,         setlayout,              {.v = &layouts[0]} },
-	{ MODKEY,                       XK_Down,       setlayout,              {.v = &layouts[2]} },
 	#if COLUMNS_LAYOUT
 	{ MODKEY,                       XK_c,          setlayout,              {.v = &layouts[3]} },
 	#endif // COLUMNS_LAYOUT
@@ -1221,8 +1219,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_numbersign, setborderpx,            {.i = 0 } },
 	#endif // SETBORDERPX_PATCH
 	#if CYCLELAYOUTS_PATCH
-	{ MODKEY|ControlMask,           XK_comma,      cyclelayout,            {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_period,     cyclelayout,            {.i = +1 } },
+	{ MODKEY,                       XK_Up,         cyclelayout,            {.i = -1 } },
+	{ MODKEY,                       XK_Down,       cyclelayout,            {.i = +1 } },
 	#endif // CYCLELAYOUTS_PATCH
 	#if MPDCONTROL_PATCH
 	{ MODKEY,                       XK_F1,         mpdchange,              {.i = -1} },
@@ -1285,6 +1283,10 @@ static Button buttons[] = {
 	#else
 	{ ClkLtSymbol,          0,                   Button3,        setlayout,      {.v = &layouts[2]} },
 	#endif // BAR_LAYOUTMENU_PATCH
+	#if CYCLELAYOUTS_PATCH
+	{ ClkLtSymbol,          0,                   Button4,        cyclelayout,      {.i = -1} },
+	{ ClkLtSymbol,          0,                   Button5,        cyclelayout,      {.i = +1} },
+	#endif // CYCLELAYOUTS_PATCH
 	#if BAR_WINTITLEACTIONS_PATCH
 	{ ClkWinTitle,          0,                   Button1,        togglewin,      {0} },
 	{ ClkWinTitle,          0,                   Button3,        showhideclient, {0} },
