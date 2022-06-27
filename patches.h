@@ -1069,7 +1069,7 @@
  * the previously used window.
  * https://dwm.suckless.org/patches/swapfocus/
  */
-#define SWAPFOCUS_PATCH 0
+#define SWAPFOCUS_PATCH 1
 
 /* This patch allows swapping the contents of the currently selected tag with another tag using
  * keyboard shortcuts.

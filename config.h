@@ -895,7 +895,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Down,       focusdir,               {.i = 3 } }, // down
 	#endif // FOCUSDIR_PATCH
 	#if SWAPFOCUS_PATCH && PERTAG_PATCH
-	{ MODKEY,                       XK_s,          swapfocus,              {.i = -1 } },
+	{ MODKEY,                       XK_Tab,        swapfocus,              {.i = -1 } },
 	#endif // SWAPFOCUS_PATCH
 	#if SWITCHCOL_PATCH
 	{ MODKEY,                       XK_v,          switchcol,              {0} },
@@ -1032,7 +1032,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Return,     mirrorlayout,           {0} },          /* flextile, flip master and stack areas */
 	#endif // FLEXTILE_DELUXE_LAYOUT
 	{ MODKEY,                       XK_space,      togglefloating,         {0} },
-	{ MODKEY,                       XK_Tab,        zoom,                   {0} },
+/*	{ MODKEY,                       XK_Tab,        zoom,                   {0} },  */
 	#if MAXIMIZE_PATCH
 	{ MODKEY|ControlMask|ShiftMask, XK_h,          togglehorizontalmax,    {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_l,          togglehorizontalmax,    {0} },
